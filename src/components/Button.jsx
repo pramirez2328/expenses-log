@@ -1,9 +1,11 @@
 import React from "react";
-
-function Button() {
+import "./Button.css";
+function Button({ onDelete, id }) {
   return (
     <div>
-      <button>click</button>
+      <button className="delete__button" onClick={() => onDelete(id)}>
+        delete
+      </button>
     </div>
   );
 }

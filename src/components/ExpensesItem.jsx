@@ -2,7 +2,7 @@ import React from "react";
 import ExpenseDate from "./ExpenseDate";
 import "./ExpensesItem.css";
 import Button from "./Button";
-function ExpensesItem({ title, amount, date }) {
+function ExpensesItem({ id, title, amount, date, onDelete }) {
   return (
     <div className="expense-item">
       <div>{<ExpenseDate date={date} />}</div>
@@ -10,7 +10,7 @@ function ExpensesItem({ title, amount, date }) {
         <h2>{title}</h2>
         <div className="expense-item__price">${amount}</div>
       </div>
-      <Button />
+      <Button onDelete={onDelete} id={id} />
     </div>
   );
 }
