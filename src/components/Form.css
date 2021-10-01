@@ -11,6 +11,8 @@
 .new-expense__control label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  font-size: 1.2em;
+  color: white;
   display: block;
 }
 
@@ -25,6 +27,6 @@
 
 .new-expense__actions {
   text-align: right;
-  margin-right: 2rem;
+
   margin-top: 1rem;
 }

@@ -17,7 +17,7 @@ function Form() {
           <input type="date" min="2021-01-01" max="2027-12-31" />
         </div>
         <div className="new-expense__actions">
-          <button type="submit">add expense</button>
+          <button type="submit">Add expense</button>
         </div>
       </div>
     </form>
