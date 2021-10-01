@@ -39,7 +39,7 @@ function Form({ onSavedNewExpense }) {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label htmlFor="title">Title:</label>
-          <input type="text" value={title} onChange={handleTitle} />
+          <input type="text" value={title} onChange={handleTitle} required />
         </div>
         <div className="new-expense__control">
           <label htmlFor="title">Amount:</label>
@@ -49,6 +49,7 @@ function Form({ onSavedNewExpense }) {
             step="0.01"
             value={amount}
             onChange={handleAmount}
+            required
           />
         </div>
         <div className="new-expense__control">
@@ -59,6 +60,7 @@ function Form({ onSavedNewExpense }) {
             max="2027-12-31"
             value={day}
             onChange={handleDay}
+            required
           />
         </div>
         <div className="new-expense__actions">

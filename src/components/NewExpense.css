@@ -1,5 +1,5 @@
 .new-expense {
-  background-color: rgb(69, 64, 64);
+  background-color: rgb(50, 50, 50);
   border: white 1px solid;
   padding: 1rem;
   margin: 2rem auto;
@@ -7,7 +7,6 @@
   max-width: 95%;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
 }
 
 .new-expense button {
@@ -15,7 +14,7 @@
   cursor: pointer;
   padding: 1rem 2rem;
   border: 1px solid #f3f0f5;
-  background-color: #6f039d;
+  background-color: #100078;
   color: white;
   border-radius: 12px;
 }

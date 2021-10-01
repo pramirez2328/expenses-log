@@ -3,11 +3,12 @@ import "./App.css";
 import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense";
 import savedExpenses from "./utilities/expenses";
+import FilterExpenses from "./components/FilterExpenses";
 function App() {
   const [expenses, setExpenses] = useState(savedExpenses);
   const handleSavedExpenses = (item) => {
     setExpenses((prevState) => {
-      return [...prevState, item];
+      return [item, ...prevState];
     });
   };
 
@@ -19,6 +20,7 @@ function App() {
   return (
     <div id="app">
       <NewExpense onSavedNew={handleSavedExpenses} />
+      <FilterExpenses />
       <section>
         <Expenses
           listOfSavedExpenses={expenses}

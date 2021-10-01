@@ -30,3 +30,10 @@
 
   margin-top: 1rem;
 }
+
+@media (max-width: 600px) {
+  .new-expense__controls {
+    justify-content: center;
+    align-items: center;
+  }
+}
