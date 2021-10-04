@@ -1,11 +1,11 @@
 import React from "react";
 import "./FilterExpenses.css";
-function FilterExpenses() {
+function FilterExpenses({ handleFilter }) {
   return (
     <div id="filter-expenses">
       <h3>Filter expenses by year</h3>
-      <select name="selectYear" id="selectYear">
-        <option className="options" value="">
+      <select name="selectYear" id="selectYear" onChange={handleFilter}>
+        <option id="options" value="">
           Select a year
         </option>
         <option value="2020">2020</option>

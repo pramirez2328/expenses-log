@@ -6,7 +6,11 @@ import savedExpenses from "./utilities/expenses";
 import FilterExpenses from "./components/FilterExpenses";
 function App() {
   const [expenses, setExpenses] = useState(savedExpenses);
+  const [filterArr, setFilterArr] = useState([]);
+  const [filter, setFilter] = useState(false);
+
   const handleSavedExpenses = (item) => {
+    setFilter(false);
     setExpenses((prevState) => {
       return [item, ...prevState];
     });
@@ -14,16 +18,26 @@ function App() {
 
   const handleDelete = (id) => {
     let newList = expenses.filter((i) => i.id !== id);
+    setFilter(false);
     setExpenses(newList);
+  };
+
+  const handleFilterByYear = (e) => {
+    const filterByYear = expenses.filter((item) => {
+      return ("" + item.date).includes(e.target.value);
+    });
+    console.log(filterByYear);
+    setFilter(true);
+    setFilterArr(filterByYear);
   };
 
   return (
     <div id="app">
       <NewExpense onSavedNew={handleSavedExpenses} />
-      <FilterExpenses />
+      <FilterExpenses handleFilter={handleFilterByYear} filterValue={filter} />
       <section>
         <Expenses
-          listOfSavedExpenses={expenses}
+          listOfSavedExpenses={filter ? filterArr : expenses}
           onDeleteExpense={handleDelete}
         />
       </section>
