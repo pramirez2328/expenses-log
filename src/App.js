@@ -26,20 +26,30 @@ function App() {
     const filterByYear = expenses.filter((item) => {
       return ("" + item.date).includes(e.target.value);
     });
-    console.log(filterByYear);
+
     setFilter(true);
     setFilterArr(filterByYear);
   };
+
+  const noExpensesWarning = (
+    <h2 style={{ color: "red", textAlign: "center" }}>
+      There are no expenses for that specific year, <br /> Try other year!
+    </h2>
+  );
 
   return (
     <div id="app">
       <NewExpense onSavedNew={handleSavedExpenses} />
       <FilterExpenses handleFilter={handleFilterByYear} filterValue={filter} />
       <section>
-        <Expenses
-          listOfSavedExpenses={filter ? filterArr : expenses}
-          onDeleteExpense={handleDelete}
-        />
+        {filterArr.length === 0 ? (
+          noExpensesWarning
+        ) : (
+          <Expenses
+            listOfSavedExpenses={filter ? filterArr : expenses}
+            onDeleteExpense={handleDelete}
+          />
+        )}
       </section>
     </div>
   );
