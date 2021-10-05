@@ -33,14 +33,7 @@ function App() {
     setFilterArr(filterByYear);
   };
 
-  const noExpensesWarning = (
-    <h2 style={{ color: "red", textAlign: "center" }}>
-      There are no expenses for that specific year, <br /> Try other year!
-    </h2>
-  );
-
   const handleOpenNewExpense = () => {
-    console.log("hello");
     document.getElementById("newExpense").style.display = "block";
   };
 
@@ -48,7 +41,7 @@ function App() {
     <div id="app">
       <AddExpense openNewExpense={handleOpenNewExpense} />
       <NewExpense onSavedNew={handleSavedExpenses} />
-      <FilterExpenses handleFilter={handleFilterByYear} filterValue={filter} />
+      <FilterExpenses handleFilter={handleFilterByYear} />
       <section>
         <Expenses
           listOfSavedExpenses={filter ? filterArr : expenses}
