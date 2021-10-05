@@ -1,0 +1,14 @@
+.addAnExpense {
+  background-color: rgb(50, 50, 50);
+  border: white 1px solid;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 50rem;
+  max-width: 95%;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.5em;
+  font-weight: bold;
+  font-size: 1.7;
+}

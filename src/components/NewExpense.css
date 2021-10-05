@@ -1,3 +1,6 @@
+#newExpense {
+  display: none;
+}
 .new-expense {
   background-color: rgb(50, 50, 50);
   border: white 1px solid;

@@ -6,7 +6,7 @@ function NewExpense({ onSavedNew }) {
     onSavedNew(item);
   };
   return (
-    <div className="new-expense">
+    <div className="new-expense" id="newExpense">
       <Form onSavedNewExpense={handleSavedExpense} />
     </div>
   );

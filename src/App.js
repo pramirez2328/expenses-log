@@ -4,6 +4,8 @@ import Expenses from "./components/Expenses";
 import NewExpense from "./components/NewExpense";
 import savedExpenses from "./utilities/expenses";
 import FilterExpenses from "./components/FilterExpenses";
+import AddExpense from "./components/AddExpense";
+
 function App() {
   const [expenses, setExpenses] = useState(savedExpenses);
   const [filterArr, setFilterArr] = useState([]);
@@ -37,19 +39,21 @@ function App() {
     </h2>
   );
 
+  const handleOpenNewExpense = () => {
+    console.log("hello");
+    document.getElementById("newExpense").style.display = "block";
+  };
+
   return (
     <div id="app">
+      <AddExpense openNewExpense={handleOpenNewExpense} />
       <NewExpense onSavedNew={handleSavedExpenses} />
       <FilterExpenses handleFilter={handleFilterByYear} filterValue={filter} />
       <section>
-        {filterArr.length === 0 ? (
-          noExpensesWarning
-        ) : (
-          <Expenses
-            listOfSavedExpenses={filter ? filterArr : expenses}
-            onDeleteExpense={handleDelete}
-          />
-        )}
+        <Expenses
+          listOfSavedExpenses={filter ? filterArr : expenses}
+          onDeleteExpense={handleDelete}
+        />
       </section>
     </div>
   );
