@@ -7,11 +7,11 @@ function ExpenseDate({ date }) {
 
   return (
     <div className="expense-date">
+      <div className="expense-date__day">{day.dayOfTheWeek}</div>
       <div className="expense-date__month">
         {day.month} {day.day}
       </div>
 
-      <div className="expense-date__day">{day.dayOfTheWeek}</div>
       <div className="expense-date__year">{day.year}</div>
     </div>
   );

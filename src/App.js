@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleOpenNewExpense = () => {
-    document.getElementById("newExpense").style.display === "none" ? ;
+    document.getElementById("newExpense").classList.toggle("hideNewExpense");
   };
 
   return (

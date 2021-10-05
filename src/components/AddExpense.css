@@ -10,5 +10,10 @@
   color: white;
   letter-spacing: 0.5em;
   font-weight: bold;
-  font-size: 1.7;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.addAnExpense:hover {
+  background-color: black;
 }
